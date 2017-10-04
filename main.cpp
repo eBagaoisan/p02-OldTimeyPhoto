@@ -10,13 +10,20 @@ int main(){
     Bitmap image;
     vector<vector<Pixel> > bmp;
     Pixel rgb;
+    int row;
+    int column;
 
-    //Example Print
-    bmp = image.toPixelMatrix();
+    //Project Planning part 2 example matrix
     image.open("machupicchu.bmp");
-
-    //Introduction of program to user
-
+    bmp = image.toPixelMatrix();   
+    /*for (int r = 0; r < bmp.size(); r++){
+        for (int c = 0; c < bmp[r].size(); c++){
+            column = c;
+        }
+        row = r;
+    }
+    */
+    cout<< "Image is size " << bmp[0].size() << " pixels wide and " << bmp.size() << " pixels high"<<endl;
     //Allow user to access file of an image
 
     //check "if" image fits pixel type; if not loop back to intro
