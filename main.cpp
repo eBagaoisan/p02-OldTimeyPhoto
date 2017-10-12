@@ -13,6 +13,7 @@ int main(){
     int rgbAvg;
     int row;
     int column;
+    string file;
 
     //Project Planning part 2 example matrix
     /*
@@ -22,10 +23,11 @@ int main(){
     */
 
     //Allow user to access file of an image
-    cout<<"Please enter an bmp image file that you would like to be gray scaled: ";
-    
+    cout<<"Please enter a bmp image file that you would like to be gray scaled(filename.bmp): ";
+    cin>>file;
+
     //check "if" image fits pixel type; if not loop back to intro
-    image.open("machupicchu.bmp");
+    image.open(file);
 
     //convert image pixel into vector matrix
     bmp = image.toPixelMatrix();
@@ -48,7 +50,8 @@ int main(){
     cout<<"Image size: "<<bmp[0].size()<<"X"<<bmp.size()<<"pixels"<<endl;
 
     //Save image grayscale as a new file
-    image.save("newMachupicchu.bmp");
+    image.save("new"+file);
+    cout<<"New image saved as: new"+file<<endl;
 
     return 0;
 }
